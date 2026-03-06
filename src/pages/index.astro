@@ -12,6 +12,7 @@ import UseCaseCard from '../components/UseCaseCard.astro';
 import FaqItem from '../components/FaqItem.astro';
 import CtaSection from '../components/CtaSection.astro';
 import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -168,21 +169,21 @@ const schema = {
       <div class="grid gap-6 md:grid-cols-3">
         <div class="reveal">
           <PainCard
-            icon="📄"
+            icon="file-text"
             title="Documentos fragmentados"
             description="Regulamentos em PDF, políticas em Word, prospectos em outro formato. A informação está espalhada e desestruturada."
           />
         </div>
         <div class="reveal reveal-delay-1">
           <PainCard
-            icon="🔄"
+            icon="arrows-clockwise"
             title="Comparação manual"
             description="Cruzar regras entre investidor e investido exige leitura linha a linha. Em FoFs, a complexidade multiplica."
           />
         </div>
         <div class="reveal reveal-delay-2">
           <PainCard
-            icon="⚠️"
+            icon="warning"
             title="Risco por falta de visibilidade"
             description="Sem base estruturada, é difícil rastrear decisões, garantir consistência entre analistas e auditar o processo."
           />
@@ -276,28 +277,28 @@ const schema = {
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <div class="reveal">
           <UseCaseCard
-            icon="🏗️"
+            icon="buildings"
             title="FoFs e Fundos de Fundos"
             description="Comparação multi-camada de regulamentos entre fundo investidor e fundos investidos. Enquadramento em cadeia."
           />
         </div>
         <div class="reveal reveal-delay-1">
           <UseCaseCard
-            icon="🏛️"
+            icon="bank"
             title="Administradoras Fiduciárias"
             description="Supervisão regulatória em escala. Análise padronizada de dezenas de fundos com rastreabilidade completa."
           />
         </div>
         <div class="reveal reveal-delay-2">
           <UseCaseCard
-            icon="📊"
+            icon="chart-bar"
             title="Assets e Gestoras"
             description="Monitoramento contínuo de compliance do portfólio. Validação de elegibilidade de ativos e classes."
           />
         </div>
         <div class="reveal reveal-delay-3">
           <UseCaseCard
-            icon="🔍"
+            icon="magnifying-glass"
             title="Compliance e Risco"
             description="Apoio a times de compliance e risco com análise estruturada, trilha de decisões e apontamento de desvios."
           />
@@ -315,22 +316,48 @@ const schema = {
       />
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          { icon: '⚡', title: 'Redução de tempo', desc: 'Até 80% menos tempo na análise de enquadramento em comparação ao processo manual.' },
-          { icon: '🔄', title: 'Consistência', desc: 'Mesma metodologia para todos os analistas. Sem variação de critério entre profissionais.' },
-          { icon: '📋', title: 'Rastreabilidade', desc: 'Trilha completa de cada decisão: quem analisou, quando, com base em quê.' },
-          { icon: '🔗', title: 'Integração', desc: 'Conexão via API com sistemas de gestão, administração e compliance já existentes.' },
-          { icon: '🧠', title: 'IA especializada', desc: 'Motor treinado para documentos do mercado financeiro brasileiro — regulamentos, prospectos, políticas.' },
-          { icon: '🔒', title: 'Segurança', desc: 'Criptografia em trânsito e repouso, controle de acesso granular e conformidade com padrões do mercado.' },
-        ].map((b, i) => (
-          <div class={`reveal ${i > 0 ? `reveal-delay-${Math.min(i, 5)}` : ''} h-full`}>
-            <div class="card-glow flex h-full flex-col rounded-xl border border-border bg-surface p-6">
-              <span class="mb-3 block text-2xl" aria-hidden="true">{b.icon}</span>
-              <h3 class="mb-1 font-display text-base font-bold text-text">{b.title}</h3>
-              <p class="text-sm leading-relaxed text-text-muted">{b.desc}</p>
-            </div>
+        <div class="reveal h-full">
+          <div class="card-glow flex h-full flex-col rounded-xl border border-border bg-surface p-6">
+            <div class="mb-3 text-accent"><Icon name="lightning" size={28} /></div>
+            <h3 class="mb-1 font-display text-base font-bold text-text">Redução de tempo</h3>
+            <p class="text-sm leading-relaxed text-text-muted">Até 80% menos tempo na análise de enquadramento em comparação ao processo manual.</p>
           </div>
-        ))}
+        </div>
+        <div class="reveal reveal-delay-1 h-full">
+          <div class="card-glow flex h-full flex-col rounded-xl border border-border bg-surface p-6">
+            <div class="mb-3 text-accent"><Icon name="arrows-clockwise" size={28} /></div>
+            <h3 class="mb-1 font-display text-base font-bold text-text">Consistência</h3>
+            <p class="text-sm leading-relaxed text-text-muted">Mesma metodologia para todos os analistas. Sem variação de critério entre profissionais.</p>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2 h-full">
+          <div class="card-glow flex h-full flex-col rounded-xl border border-border bg-surface p-6">
+            <div class="mb-3 text-accent"><Icon name="clipboard-text" size={28} /></div>
+            <h3 class="mb-1 font-display text-base font-bold text-text">Rastreabilidade</h3>
+            <p class="text-sm leading-relaxed text-text-muted">Trilha completa de cada decisão: quem analisou, quando, com base em quê.</p>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-3 h-full">
+          <div class="card-glow flex h-full flex-col rounded-xl border border-border bg-surface p-6">
+            <div class="mb-3 text-accent"><Icon name="link" size={28} /></div>
+            <h3 class="mb-1 font-display text-base font-bold text-text">Integração</h3>
+            <p class="text-sm leading-relaxed text-text-muted">Conexão via API com sistemas de gestão, administração e compliance já existentes.</p>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-4 h-full">
+          <div class="card-glow flex h-full flex-col rounded-xl border border-border bg-surface p-6">
+            <div class="mb-3 text-accent"><Icon name="brain" size={28} /></div>
+            <h3 class="mb-1 font-display text-base font-bold text-text">IA especializada</h3>
+            <p class="text-sm leading-relaxed text-text-muted">Motor treinado para documentos do mercado financeiro brasileiro — regulamentos, prospectos, políticas.</p>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-5 h-full">
+          <div class="card-glow flex h-full flex-col rounded-xl border border-border bg-surface p-6">
+            <div class="mb-3 text-accent"><Icon name="lock-key" size={28} /></div>
+            <h3 class="mb-1 font-display text-base font-bold text-text">Segurança</h3>
+            <p class="text-sm leading-relaxed text-text-muted">Criptografia em trânsito e repouso, controle de acesso granular e conformidade com padrões do mercado.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
