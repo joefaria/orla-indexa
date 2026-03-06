@@ -2,25 +2,25 @@
 
 @theme inline {
   /* ── Backgrounds ── */
-  --color-bg: #070D18;
-  --color-bg-alt: #0C1220;
-  --color-surface: #0F1729;
-  --color-surface-hover: #162036;
+  --color-bg: #0A0A0A;
+  --color-bg-alt: #111111;
+  --color-surface: #171717;
+  --color-surface-hover: #1F1F1F;
 
   /* ── Borders ── */
-  --color-border: #1E2A42;
-  --color-border-strong: #2A3A5C;
+  --color-border: #262626;
+  --color-border-strong: #333333;
 
   /* ── Text ── */
-  --color-text: #E8ECF1;
-  --color-text-muted: #8896AB;
-  --color-text-dim: #5A6A80;
+  --color-text: #EBEBEB;
+  --color-text-muted: #909090;
+  --color-text-dim: #5C5C5C;
 
-  /* ── Accent ── */
-  --color-accent: #2563EB;
-  --color-accent-light: #3B82F6;
-  --color-accent-glow: rgba(37, 99, 235, 0.15);
-  --color-accent-subtle: rgba(37, 99, 235, 0.08);
+  /* ── Accent (rose) ── */
+  --color-accent: #E11D7A;
+  --color-accent-light: #F43F9E;
+  --color-accent-glow: rgba(225, 29, 122, 0.15);
+  --color-accent-subtle: rgba(225, 29, 122, 0.08);
 
   /* ── Semantic ── */
   --color-signal: #10B981;
