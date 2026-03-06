@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ── Backgrounds ── */
+  --color-bg: #070D18;
+  --color-bg-alt: #0C1220;
+  --color-surface: #0F1729;
+  --color-surface-hover: #162036;
+
+  /* ── Borders ── */
+  --color-border: #1E2A42;
+  --color-border-strong: #2A3A5C;
+
+  /* ── Text ── */
+  --color-text: #E8ECF1;
+  --color-text-muted: #8896AB;
+  --color-text-dim: #5A6A80;
+
+  /* ── Accent ── */
+  --color-accent: #2563EB;
+  --color-accent-light: #3B82F6;
+  --color-accent-glow: rgba(37, 99, 235, 0.15);
+  --color-accent-subtle: rgba(37, 99, 235, 0.08);
+
+  /* ── Semantic ── */
+  --color-signal: #10B981;
+  --color-signal-glow: rgba(16, 185, 129, 0.15);
+  --color-warning: #F59E0B;
+  --color-warning-glow: rgba(245, 158, 11, 0.15);
+  --color-risk: #EF4444;
+  --color-risk-glow: rgba(239, 68, 68, 0.15);
+
+  /* ── Typography ── */
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* ── Radius ── */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-text font-sans antialiased;
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 200ms; }
+.reveal-delay-3 { transition-delay: 300ms; }
+.reveal-delay-4 { transition-delay: 400ms; }
+.reveal-delay-5 { transition-delay: 500ms; }
+
+/* ── Hero entry ── */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-animate {
+  animation: hero-fade-up 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+.hero-animate-delay-1 { animation-delay: 0.15s; }
+.hero-animate-delay-2 { animation-delay: 0.3s; }
+.hero-animate-delay-3 { animation-delay: 0.5s; }
+.hero-animate-delay-4 { animation-delay: 0.7s; }
+
+/* ── Accent line ── */
+.accent-line {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+  border-radius: 2px;
+}
+
+/* ── Dot grid background ── */
+.dot-grid {
+  background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── FAQ ── */
+details summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-chevron {
+  transition: transform 250ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+details[open] .faq-answer {
+  animation: faq-open 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes faq-open {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Mockup animations ── */
+@keyframes mockup-highlight {
+  from { background-color: transparent; }
+  to { background-color: var(--color-accent-glow); }
+}
+
+@keyframes mockup-row-in {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes mockup-badge-pop {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes draw-line {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+.mockup-row {
+  opacity: 0;
+  animation: mockup-row-in 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.mockup-badge {
+  opacity: 0;
+  animation: mockup-badge-pop 0.3s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+/* ── Step timeline ── */
+.step-line {
+  background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-border) 100%);
+}
+
+/* ── Glow effect for cards on hover ── */
+.card-glow {
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-glow:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 24px var(--color-accent-glow);
+}

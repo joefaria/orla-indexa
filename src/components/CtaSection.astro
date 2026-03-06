@@ -1,0 +1,57 @@
+---
+import DemoButton from './DemoButton.astro';
+---
+
+<section id="agendar" class="relative bg-bg-alt py-20 md:py-28">
+  <div class="mx-auto max-w-2xl px-6 text-center">
+    <h2 class="font-display text-3xl font-extrabold leading-tight text-text md:text-4xl">
+      Sua equipe ainda faz enquadramento em planilha?
+    </h2>
+    <p class="mt-4 text-lg text-text-muted">
+      Veja como o Indexa pode reduzir o esforço manual e padronizar a análise de compliance da sua operação.
+    </p>
+
+    <!-- Inline form -->
+    <form
+      action="#"
+      method="POST"
+      class="mx-auto mt-10 grid max-w-xl gap-4 sm:grid-cols-2"
+    >
+      <input
+        type="text"
+        name="name"
+        placeholder="Nome"
+        required
+        class="rounded-lg border border-border bg-surface px-4 py-3 text-sm text-text placeholder-text-dim outline-none transition-colors focus:border-accent"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="E-mail corporativo"
+        required
+        class="rounded-lg border border-border bg-surface px-4 py-3 text-sm text-text placeholder-text-dim outline-none transition-colors focus:border-accent"
+      />
+      <input
+        type="text"
+        name="company"
+        placeholder="Empresa"
+        required
+        class="rounded-lg border border-border bg-surface px-4 py-3 text-sm text-text placeholder-text-dim outline-none transition-colors focus:border-accent"
+      />
+      <input
+        type="text"
+        name="role"
+        placeholder="Cargo"
+        class="rounded-lg border border-border bg-surface px-4 py-3 text-sm text-text placeholder-text-dim outline-none transition-colors focus:border-accent"
+      />
+      <div class="sm:col-span-2">
+        <button
+          type="submit"
+          class="w-full rounded-lg bg-accent px-8 py-4 text-base font-semibold text-white shadow-[0_0_24px_var(--color-accent-glow)] transition-all hover:bg-accent-light"
+        >
+          Agendar Demonstração
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

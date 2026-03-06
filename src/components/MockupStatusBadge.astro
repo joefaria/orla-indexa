@@ -1,0 +1,23 @@
+---
+interface Props {
+  status: 'conforme' | 'atencao' | 'risco';
+  label?: string;
+}
+
+const { status, label } = Astro.props;
+
+const config = {
+  conforme: { text: label || 'CONFORME', bg: 'bg-signal-glow', color: 'text-signal', border: 'border-signal/20' },
+  atencao: { text: label || 'ATENÇÃO', bg: 'bg-warning-glow', color: 'text-warning', border: 'border-warning/20' },
+  risco: { text: label || 'RISCO', bg: 'bg-risk-glow', color: 'text-risk', border: 'border-risk/20' },
+};
+
+const c = config[status];
+---
+
+<span class:list={[
+  'inline-flex items-center rounded-full border px-2.5 py-0.5 font-mono text-[10px] font-semibold tracking-wider uppercase',
+  c.bg, c.color, c.border,
+]}>
+  {c.text}
+</span>

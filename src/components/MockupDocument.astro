@@ -1,0 +1,111 @@
+---
+
+---
+
+<div class="reveal grid gap-6 lg:grid-cols-[1fr_auto_1fr] lg:items-center">
+  <!-- Left: PDF Document Simulation -->
+  <div class="rounded-xl border border-border bg-surface overflow-hidden">
+    <!-- Title bar -->
+    <div class="flex items-center gap-2 border-b border-border bg-bg-alt px-4 py-2.5">
+      <div class="flex gap-1.5">
+        <div class="h-2.5 w-2.5 rounded-full bg-risk/60"></div>
+        <div class="h-2.5 w-2.5 rounded-full bg-warning/60"></div>
+        <div class="h-2.5 w-2.5 rounded-full bg-signal/60"></div>
+      </div>
+      <span class="font-mono text-[11px] text-text-dim">Regulamento_FIA_Multimercado.pdf</span>
+    </div>
+    <!-- Document body -->
+    <div class="space-y-2.5 p-5">
+      <!-- Blurred lines -->
+      <div class="h-3 w-[90%] rounded bg-border/40"></div>
+      <div class="h-3 w-[75%] rounded bg-border/40"></div>
+      <div class="h-3 w-[85%] rounded bg-border/40"></div>
+
+      <!-- Highlighted extracted clause 1 -->
+      <div class="rounded-md border-l-2 border-accent bg-accent-subtle px-3 py-2">
+        <p class="font-mono text-xs text-accent-light">Art. 12 — Limite de concentração por emissor: <span class="font-semibold text-text">10%</span></p>
+      </div>
+
+      <div class="h-3 w-[70%] rounded bg-border/40"></div>
+      <div class="h-3 w-[80%] rounded bg-border/40"></div>
+
+      <!-- Highlighted extracted clause 2 -->
+      <div class="rounded-md border-l-2 border-accent bg-accent-subtle px-3 py-2">
+        <p class="font-mono text-xs text-accent-light">Art. 15 — Classes permitidas: <span class="font-semibold text-text">Renda Fixa, Multimercado</span></p>
+      </div>
+
+      <div class="h-3 w-[65%] rounded bg-border/40"></div>
+
+      <!-- Highlighted extracted clause 3 -->
+      <div class="rounded-md border-l-2 border-risk bg-risk-glow px-3 py-2">
+        <p class="font-mono text-xs text-risk">Art. 18 — Vedação: <span class="font-semibold text-text">ativos no exterior</span></p>
+      </div>
+
+      <div class="h-3 w-[88%] rounded bg-border/40"></div>
+      <div class="h-3 w-[50%] rounded bg-border/40"></div>
+    </div>
+  </div>
+
+  <!-- Center: Arrow connector -->
+  <div class="hidden flex-col items-center gap-2 lg:flex">
+    <svg width="80" height="40" viewBox="0 0 80 40" class="text-accent">
+      <line x1="0" y1="20" x2="60" y2="20" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" />
+      <polygon points="60,12 76,20 60,28" fill="currentColor" />
+    </svg>
+    <span class="rounded-full border border-accent/30 bg-accent-subtle px-3 py-1 font-mono text-[10px] font-semibold tracking-wider text-accent-light uppercase">Indexa AI</span>
+  </div>
+
+  <!-- Mobile arrow -->
+  <div class="flex justify-center lg:hidden">
+    <svg width="40" height="60" viewBox="0 0 40 60" class="text-accent">
+      <line x1="20" y1="0" x2="20" y2="42" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" />
+      <polygon points="12,42 20,56 28,42" fill="currentColor" />
+    </svg>
+  </div>
+
+  <!-- Right: Structured Data -->
+  <div class="rounded-xl border border-border bg-surface overflow-hidden">
+    <!-- Title bar -->
+    <div class="flex items-center justify-between border-b border-border bg-bg-alt px-4 py-2.5">
+      <span class="font-mono text-[11px] text-text-dim">Dados Estruturados</span>
+      <span class="rounded-full bg-signal-glow px-2 py-0.5 font-mono text-[9px] font-semibold text-signal uppercase">Extraído</span>
+    </div>
+    <!-- Data table -->
+    <div class="divide-y divide-border/40">
+      <!-- Header -->
+      <div class="grid grid-cols-[1fr_auto_auto] gap-4 px-4 py-2.5">
+        <span class="font-mono text-[10px] font-medium tracking-wider text-text-dim uppercase">Parâmetro</span>
+        <span class="font-mono text-[10px] font-medium tracking-wider text-text-dim uppercase">Valor</span>
+        <span class="font-mono text-[10px] font-medium tracking-wider text-text-dim uppercase">Status</span>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="mockup-row grid grid-cols-[1fr_auto_auto] items-center gap-4 px-4 py-3" style="animation-delay: 0.8s;">
+        <span class="text-sm text-text-muted">Limite por emissor</span>
+        <span class="font-mono text-sm font-medium text-text">10%</span>
+        <span class="rounded-full bg-signal-glow px-2 py-0.5 font-mono text-[9px] font-semibold text-signal">OK</span>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="mockup-row grid grid-cols-[1fr_auto_auto] items-center gap-4 px-4 py-3" style="animation-delay: 0.95s;">
+        <span class="text-sm text-text-muted">Classes permitidas</span>
+        <span class="font-mono text-sm font-medium text-text">RF, MM</span>
+        <span class="rounded-full bg-signal-glow px-2 py-0.5 font-mono text-[9px] font-semibold text-signal">OK</span>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="mockup-row grid grid-cols-[1fr_auto_auto] items-center gap-4 px-4 py-3" style="animation-delay: 1.1s;">
+        <span class="text-sm text-text-muted">Vedação exterior</span>
+        <span class="font-mono text-sm font-medium text-text">Sim</span>
+        <span class="rounded-full bg-risk-glow px-2 py-0.5 font-mono text-[9px] font-semibold text-risk">ALERTA</span>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="mockup-row grid grid-cols-[1fr_auto_auto] items-center gap-4 px-4 py-3" style="animation-delay: 1.25s;">
+        <span class="text-sm text-text-muted">Benchmark</span>
+        <span class="font-mono text-sm font-medium text-text">CDI + 2%</span>
+        <span class="rounded-full bg-signal-glow px-2 py-0.5 font-mono text-[9px] font-semibold text-signal">OK</span>
+      </div>
+    </div>
+  </div>
+</div>

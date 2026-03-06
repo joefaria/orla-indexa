@@ -1,0 +1,376 @@
+---
+import LandingPage from '../layouts/LandingPage.astro';
+import Navbar from '../components/Navbar.astro';
+import DemoButton from '../components/DemoButton.astro';
+import SocialProofStrip from '../components/SocialProofStrip.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import PainCard from '../components/PainCard.astro';
+import ProcessStep from '../components/ProcessStep.astro';
+import MockupDocument from '../components/MockupDocument.astro';
+import MockupDashboard from '../components/MockupDashboard.astro';
+import UseCaseCard from '../components/UseCaseCard.astro';
+import FaqItem from '../components/FaqItem.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Indexa",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Plataforma de IA para análise de enquadramento de fundos de investimento. Estrutura regulamentos, compara compliance entre investidor e investido, e acelera decisões de enquadramento.",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/OnlineOnly",
+        "areaServed": "BR"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://indexa.com.br/#org",
+      "name": "Indexa",
+      "url": "https://indexa.com.br",
+      "description": "Infraestrutura de IA para compliance de fundos de investimento no Brasil"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "A IA substitui o analista de compliance?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Não. O Indexa é uma ferramenta de apoio que acelera e padroniza a análise, mas a decisão final sempre é do analista. A plataforma estrutura dados e apresenta comparações — o julgamento continua sendo humano." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais tipos de documento a plataforma processa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Regulamentos de fundos, prospectos, políticas de investimento, lâminas, documentos de ativos e outras peças regulatórias em formato PDF, Word ou texto." }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona a integração com nosso sistema atual?",
+          "acceptedAnswer": { "@type": "Answer", "text": "O Indexa se conecta via API ao seu sistema de gestão, administração ou compliance. A integração é feita com acompanhamento técnico e não exige mudança nos seus processos existentes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Os dados são armazenados de forma segura?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. Toda a infraestrutura segue padrões de segurança do mercado financeiro, com criptografia em trânsito e em repouso, controle de acesso granular e rastreabilidade completa de operações." }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual o tempo de implementação?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A implementação típica leva de 4 a 8 semanas, dependendo do volume de documentos e da complexidade da integração com seus sistemas." }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<LandingPage
+  title="Indexa — IA para Análise de Enquadramento de Fundos | Compliance Automatizado"
+  description="Plataforma de IA que estrutura regulamentos e acelera decisões de enquadramento. Para assets, administradoras fiduciárias e equipes de compliance."
+  canonicalUrl="https://indexa.com.br"
+  schemaMarkup={schema}
+>
+  <Navbar />
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section class="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
+    <!-- Dot grid background -->
+    <div class="dot-grid absolute inset-0 opacity-30" aria-hidden="true"></div>
+    <!-- Gradient glow -->
+    <div class="absolute top-0 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-accent/5 blur-[120px]" aria-hidden="true"></div>
+
+    <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+      <!-- Left: Copy -->
+      <div>
+        <div class="hero-animate">
+          <span class="inline-block rounded-full border border-accent/30 bg-accent-subtle px-4 py-1.5 font-mono text-xs font-medium tracking-wider text-accent-light uppercase">
+            Inteligência Documental + Decisão Assistida
+          </span>
+        </div>
+
+        <h1 class="hero-animate hero-animate-delay-1 mt-6 font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-text md:text-5xl lg:text-[3.25rem]">
+          A IA que estrutura regulamentos — e a plataforma que acelera a decisão de <span class="text-accent-light">enquadramento</span>
+        </h1>
+
+        <p class="hero-animate hero-animate-delay-2 mt-6 max-w-xl text-lg leading-relaxed text-text-muted">
+          O Indexa extrai regras e restrições de documentos desestruturados, organiza tudo em base estruturada e apresenta comparações claras entre investidor e investido para apoiar a análise e a tomada de decisão.
+        </p>
+
+        <div class="hero-animate hero-animate-delay-3 mt-8 flex flex-wrap items-center gap-4">
+          <DemoButton size="lg" />
+          <DemoButton text="Ver como funciona" href="#solucao" variant="ghost" size="lg" />
+        </div>
+
+        <div class="hero-animate hero-animate-delay-4 mt-10">
+          <SocialProofStrip />
+        </div>
+      </div>
+
+      <!-- Right: Mini preview of platform -->
+      <div class="hero-animate hero-animate-delay-3 hidden lg:block">
+        <div class="rounded-xl border border-border bg-surface p-1 shadow-[0_0_60px_var(--color-accent-glow)]">
+          <!-- Mini mockup preview -->
+          <div class="rounded-lg border border-border/50 bg-bg-alt p-4">
+            <div class="mb-3 flex items-center justify-between">
+              <span class="font-mono text-[10px] tracking-wider text-text-dim uppercase">Enquadramento — FIA Multimercado</span>
+              <span class="rounded-full bg-signal-glow px-2 py-0.5 font-mono text-[9px] font-semibold text-signal">5/6 Conforme</span>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between rounded-md bg-surface px-3 py-2">
+                <span class="text-xs text-text-muted">Concentração</span>
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-xs text-text">8.2% / 10%</span>
+                  <span class="h-2 w-2 rounded-full bg-signal"></span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between rounded-md bg-surface px-3 py-2">
+                <span class="text-xs text-text-muted">Rating mínimo</span>
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-xs text-text">A+ / AA</span>
+                  <span class="h-2 w-2 rounded-full bg-warning"></span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between rounded-md bg-surface px-3 py-2">
+                <span class="text-xs text-text-muted">Classes permitidas</span>
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-xs text-text">MM ∈ &#123;RF, MM&#125;</span>
+                  <span class="h-2 w-2 rounded-full bg-signal"></span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between rounded-md bg-risk-glow/30 px-3 py-2">
+                <span class="text-xs text-text-muted">Derivativos</span>
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-xs text-risk">Alav. / Hedge only</span>
+                  <span class="h-2 w-2 rounded-full bg-risk"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ DOR ═══════════════════════════════ -->
+  <section id="problema" class="bg-bg-alt py-20 md:py-28">
+    <div class="mx-auto max-w-6xl px-6">
+      <SectionHeading
+        label="O Problema"
+        title="O enquadramento ainda depende de trabalho manual"
+        subtitle="Analistas passam horas lendo regulamentos, comparando regras em planilhas e consolidando pareceres dispersos. Esse processo gera lentidão, retrabalho e risco."
+      />
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="reveal">
+          <PainCard
+            icon="📄"
+            title="Documentos fragmentados"
+            description="Regulamentos em PDF, políticas em Word, prospectos em outro formato. A informação está espalhada e desestruturada."
+          />
+        </div>
+        <div class="reveal reveal-delay-1">
+          <PainCard
+            icon="🔄"
+            title="Comparação manual"
+            description="Cruzar regras entre investidor e investido exige leitura linha a linha. Em FoFs, a complexidade multiplica."
+          />
+        </div>
+        <div class="reveal reveal-delay-2">
+          <PainCard
+            icon="⚠️"
+            title="Risco por falta de visibilidade"
+            description="Sem base estruturada, é difícil rastrear decisões, garantir consistência entre analistas e auditar o processo."
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ COMO FUNCIONA ═══════════════════════════════ -->
+  <section id="solucao" class="py-20 md:py-28">
+    <div class="mx-auto max-w-6xl px-6">
+      <SectionHeading
+        label="Como Funciona"
+        title="Do documento à decisão em 5 passos"
+        subtitle="O Indexa automatiza o fluxo completo: da ingestão documental até a análise comparativa pronta para decisão."
+      />
+
+      <div class="reveal flex flex-col gap-10 md:flex-row md:gap-0">
+        <ProcessStep
+          step={1}
+          title="Ingestão"
+          description="Upload de regulamentos, prospectos e políticas de investimento"
+        />
+        <ProcessStep
+          step={2}
+          title="Extração via IA"
+          description="Motor de IA lê e identifica regras, limites e restrições"
+        />
+        <ProcessStep
+          step={3}
+          title="Base Estruturada"
+          description="Dados organizados em base consultável e auditável"
+        />
+        <ProcessStep
+          step={4}
+          title="Comparação"
+          description="Análise automática entre investidor e investido"
+        />
+        <ProcessStep
+          step={5}
+          title="Decisão Assistida"
+          description="Analista revisa, aponta riscos e toma decisão informada"
+          isLast={true}
+        />
+      </div>
+
+      <!-- Inline CTA -->
+      <div class="reveal mt-16 text-center">
+        <DemoButton text="Agendar Demonstração" size="lg" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ PLATAFORMA ═══════════════════════════════ -->
+  <section id="plataforma" class="bg-bg-alt py-20 md:py-28">
+    <div class="mx-auto max-w-6xl px-6">
+      <SectionHeading
+        label="A Plataforma"
+        title="Não entregamos só dados extraídos. Entregamos a análise pronta para o analista."
+        subtitle="Uma interface pensada para quem precisa comparar, apontar riscos e decidir — com clareza e rastreabilidade."
+      />
+
+      <!-- Mockup A: Document → Structured Data -->
+      <div class="reveal">
+        <p class="mb-6 text-center font-mono text-xs tracking-wider text-text-dim uppercase">Extração inteligente de documentos</p>
+        <MockupDocument />
+      </div>
+
+      <!-- Mockup B: Comparison Dashboard -->
+      <div class="mt-16">
+        <p class="reveal mb-6 text-center font-mono text-xs tracking-wider text-text-dim uppercase">Dashboard de comparação — investidor vs investido</p>
+        <MockupDashboard />
+      </div>
+
+      <!-- Inline CTA -->
+      <div class="reveal mt-16 text-center">
+        <DemoButton text="Ver a plataforma ao vivo" size="lg" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CASOS DE USO ═══════════════════════════════ -->
+  <section id="casos-de-uso" class="py-20 md:py-28">
+    <div class="mx-auto max-w-6xl px-6">
+      <SectionHeading
+        label="Casos de Uso"
+        title="Para quem o Indexa foi pensado"
+        subtitle="Estruturas que precisam de análise documental rigorosa e comparação de conformidade em escala."
+      />
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="reveal">
+          <UseCaseCard
+            icon="🏗️"
+            title="FoFs e Fundos de Fundos"
+            description="Comparação multi-camada de regulamentos entre fundo investidor e fundos investidos. Enquadramento em cadeia."
+          />
+        </div>
+        <div class="reveal reveal-delay-1">
+          <UseCaseCard
+            icon="🏛️"
+            title="Administradoras Fiduciárias"
+            description="Supervisão regulatória em escala. Análise padronizada de dezenas de fundos com rastreabilidade completa."
+          />
+        </div>
+        <div class="reveal reveal-delay-2">
+          <UseCaseCard
+            icon="📊"
+            title="Assets e Gestoras"
+            description="Monitoramento contínuo de compliance do portfólio. Validação de elegibilidade de ativos e classes."
+          />
+        </div>
+        <div class="reveal reveal-delay-3">
+          <UseCaseCard
+            icon="🔍"
+            title="Compliance e Risco"
+            description="Apoio a times de compliance e risco com análise estruturada, trilha de decisões e apontamento de desvios."
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ BENEFÍCIOS ═══════════════════════════════ -->
+  <section class="bg-bg-alt py-20 md:py-28">
+    <div class="mx-auto max-w-6xl px-6">
+      <SectionHeading
+        label="Por que Indexa"
+        title="O ganho não está só em extrair dados. Está em reduzir a fricção da decisão."
+      />
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { icon: '⚡', title: 'Redução de tempo', desc: 'Até 80% menos tempo na análise de enquadramento em comparação ao processo manual.' },
+          { icon: '🔄', title: 'Consistência', desc: 'Mesma metodologia para todos os analistas. Sem variação de critério entre profissionais.' },
+          { icon: '📋', title: 'Rastreabilidade', desc: 'Trilha completa de cada decisão: quem analisou, quando, com base em quê.' },
+          { icon: '🔗', title: 'Integração', desc: 'Conexão via API com sistemas de gestão, administração e compliance já existentes.' },
+          { icon: '🧠', title: 'IA especializada', desc: 'Motor treinado para documentos do mercado financeiro brasileiro — regulamentos, prospectos, políticas.' },
+          { icon: '🔒', title: 'Segurança', desc: 'Criptografia em trânsito e repouso, controle de acesso granular e conformidade com padrões do mercado.' },
+        ].map((b, i) => (
+          <div class={`reveal ${i > 0 ? `reveal-delay-${Math.min(i, 5)}` : ''} h-full`}>
+            <div class="card-glow flex h-full flex-col rounded-xl border border-border bg-surface p-6">
+              <span class="mb-3 block text-2xl" aria-hidden="true">{b.icon}</span>
+              <h3 class="mb-1 font-display text-base font-bold text-text">{b.title}</h3>
+              <p class="text-sm leading-relaxed text-text-muted">{b.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FAQ ═══════════════════════════════ -->
+  <section class="py-20 md:py-28">
+    <div class="mx-auto max-w-2xl px-6">
+      <SectionHeading
+        label="FAQ"
+        title="Perguntas frequentes"
+      />
+
+      <div class="reveal">
+        <FaqItem
+          question="A IA substitui o analista de compliance?"
+          answer="Não. O Indexa é uma ferramenta de apoio que acelera e padroniza a análise, mas a decisão final sempre é do analista. A plataforma estrutura dados e apresenta comparações — o julgamento continua sendo humano."
+        />
+        <FaqItem
+          question="Quais tipos de documento a plataforma processa?"
+          answer="Regulamentos de fundos, prospectos, políticas de investimento, lâminas, documentos de ativos e outras peças regulatórias em formato PDF, Word ou texto."
+        />
+        <FaqItem
+          question="Como funciona a integração com nosso sistema atual?"
+          answer="O Indexa se conecta via API ao seu sistema de gestão, administração ou compliance. A integração é feita com acompanhamento técnico e não exige mudança nos seus processos existentes."
+        />
+        <FaqItem
+          question="Os dados são armazenados de forma segura?"
+          answer="Sim. Toda a infraestrutura segue padrões de segurança do mercado financeiro, com criptografia em trânsito e em repouso, controle de acesso granular e rastreabilidade completa de operações."
+        />
+        <FaqItem
+          question="Qual o tempo de implementação?"
+          answer="A implementação típica leva de 4 a 8 semanas, dependendo do volume de documentos e da complexidade da integração com seus sistemas."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CTA FINAL ═══════════════════════════════ -->
+  <CtaSection />
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <Footer />
+</LandingPage>

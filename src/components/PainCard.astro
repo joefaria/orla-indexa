@@ -1,0 +1,17 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { icon, title, description } = Astro.props;
+---
+
+<div class="card-glow flex h-full flex-col rounded-xl border border-warning/20 bg-warning-glow/30 p-6 md:p-8">
+  <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-warning/20 text-warning">
+    <span class="text-2xl" aria-hidden="true">{icon}</span>
+  </div>
+  <h3 class="mb-2 font-display text-lg font-bold text-text">{title}</h3>
+  <p class="text-sm leading-relaxed text-text-muted">{description}</p>
+</div>

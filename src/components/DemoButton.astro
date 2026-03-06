@@ -1,0 +1,39 @@
+---
+interface Props {
+  text?: string;
+  href?: string;
+  size?: 'md' | 'lg';
+  variant?: 'primary' | 'ghost';
+  class?: string;
+}
+
+const {
+  text = 'Agendar Demonstração',
+  href = '#agendar',
+  size = 'md',
+  variant = 'primary',
+  class: className = '',
+} = Astro.props;
+
+const sizeClasses = {
+  md: 'px-6 py-3 text-sm',
+  lg: 'px-8 py-4 text-base',
+};
+
+const variantClasses = {
+  primary: 'bg-accent text-white hover:bg-accent-light shadow-[0_0_20px_var(--color-accent-glow)]',
+  ghost: 'border border-border-strong text-text hover:border-accent hover:text-accent-light',
+};
+---
+
+<a
+  href={href}
+  class:list={[
+    'inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-300',
+    sizeClasses[size],
+    variantClasses[variant],
+    className,
+  ]}
+>
+  {text}
+</a>
